@@ -1,0 +1,19 @@
+{
+  "name": "placement-platform",
+  "version": "1.0.0",
+  "description": "Complete Placement Preparation Platform with TCS NQT, Coding & AI Interviews",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "seed": "cd backend && node scripts/seedQuestions.js",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": ["placement", "tcs-nqt", "coding", "interviews"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
