@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
@@ -9,6 +9,11 @@ import SignupPage from './pages/SignupPage';
 import Dashboard from './pages/Dashboard';
 import ProfileSetup from './pages/ProfileSetup';
 import TCSNQTSection from './pages/TCSNQTSection';
+import AptitudeSection from './pages/AptitudeSection';
+import CodingSection from './pages/CodingSection';
+import InterviewSection from './pages/InterviewSection';
+import OtherSections from './pages/OtherSections';
+import Leaderboard from './pages/Leaderboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
@@ -22,21 +27,14 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/dashboard" element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } />
-            <Route path="/profile-setup" element={
-              <ProtectedRoute>
-                <ProfileSetup />
-              </ProtectedRoute>
-            } />
-            <Route path="/tcs-nqt" element={
-              <ProtectedRoute>
-                <TCSNQTSection />
-              </ProtectedRoute>
-            } />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/profile-setup" element={<ProtectedRoute><ProfileSetup /></ProtectedRoute>} />
+            <Route path="/tcs-nqt" element={<ProtectedRoute><TCSNQTSection /></ProtectedRoute>} />
+            <Route path="/tcs-nqt/aptitude/:subcategory" element={<ProtectedRoute><AptitudeSection /></ProtectedRoute>} />
+            <Route path="/tcs-nqt/coding" element={<ProtectedRoute><CodingSection /></ProtectedRoute>} />
+            <Route path="/tcs-nqt/interview" element={<ProtectedRoute><InterviewSection /></ProtectedRoute>} />
+            <Route path="/section/:section" element={<ProtectedRoute><OtherSections /></ProtectedRoute>} />
+            <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
           </Routes>
         </Router>
       </AuthProvider>

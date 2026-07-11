@@ -1,0 +1,107 @@
+.leaderboard-page {
+  min-height: 100vh;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--border-light);
+  border-radius: 2rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.dark-theme .tab {
+  border-color: var(--border-dark);
+}
+
+.tab.active {
+  background: var(--primary-green);
+  color: white;
+  border-color: var(--primary-green);
+}
+
+.leaderboard-card {
+  padding: 1.5rem;
+}
+
+.lb-header {
+  display: grid;
+  grid-template-columns: 80px 2fr 2fr 1fr;
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 0.5rem;
+}
+
+.dark-theme .lb-header {
+  border-bottom-color: var(--border-dark);
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 80px 2fr 2fr 1fr;
+  padding: 1rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.lb-row:hover {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.lb-row.current-user {
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid var(--primary-green);
+}
+
+.rank-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.points-cell {
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .lb-header, .lb-row {
+    grid-template-columns: 60px 2fr 1fr;
+  }
+  .college-cell {
+    display: none;
+  }
+}

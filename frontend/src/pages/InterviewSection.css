@@ -1,0 +1,134 @@
+.interview-page {
+  min-height: 100vh;
+}
+
+.interview-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ai-avatar {
+  margin-bottom: 2rem;
+}
+
+.avatar-icon {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.avatar-icon.speaking {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.ai-status {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.question-display {
+  margin-bottom: 2rem;
+}
+
+.question-display h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.replay-btn {
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.answer-section {
+  margin-bottom: 2rem;
+}
+
+.transcript-box {
+  min-height: 120px;
+  padding: 1rem;
+  background: var(--background-light);
+  border: 2px dashed var(--border-light);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.dark-theme .transcript-box {
+  background: var(--background-dark);
+  border-color: var(--border-dark);
+}
+
+.placeholder {
+  opacity: 0.4;
+  font-style: italic;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mic-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-green);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--primary-green);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.mic-btn.listening {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: white;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.interview-history {
+  text-align: left;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.5rem;
+}
+
+.dark-theme .interview-history {
+  border-top-color: var(--border-dark);
+}
+
+.history-item {
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.h-question, .h-answer {
+  margin-bottom: 0.5rem;
+}
+
+.h-feedback {
+  color: var(--primary-green);
+  font-weight: 500;
+}
